@@ -204,7 +204,8 @@
   .shot .frame img{display:block;width:100%;height:auto}
   .compare.mobile{grid-template-columns:repeat(4,1fr);gap:16px}
   .compare.mobile .shot figcaption{flex-wrap:wrap}
-  .compare.mobile.three{grid-template-columns:repeat(3,1fr);max-width:960px}
+  .compare.mobile.three{grid-template-columns:repeat(3,1fr);max-width:960px;margin-left:auto;margin-right:auto}
+  .compare.mobile.three + .note{text-align:center}
   .shot .frame img{width:100%;height:auto}
   .shot figcaption{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--muted)}
   .label{font-family:"Space Grotesk",sans-serif;font-weight:500;font-size:12px;letter-spacing:.06em;padding:4px 8px;border-radius:6px;background:var(--surface);border:1px solid var(--line);color:#fff}
@@ -255,7 +256,7 @@
   .back{color:var(--muted);font-weight:500;font-size:16px;transition:color .2s}.back:hover{color:#fff}
   @media (max-width:1000px){
     .compare{grid-template-columns:1fr}
-    .compare.mobile,.compare.mobile.three{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-right:calc(-1 * var(--pad));padding-right:var(--pad);scrollbar-width:none}
+    .compare.mobile,.compare.mobile.three{display:flex;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;touch-action:pan-x pan-y;scroll-snap-type:x mandatory;gap:14px;margin-right:calc(-1 * var(--pad));padding-right:var(--pad);scrollbar-width:none}
     .compare.mobile::-webkit-scrollbar{display:none}
     .compare.mobile .shot{flex:0 0 min(62%,300px);scroll-snap-align:start}
     .cs-body{grid-template-columns:1fr;gap:40px}

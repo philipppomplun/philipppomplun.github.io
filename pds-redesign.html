@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product page redesign – Philipp Pomplun</title>
+<meta name="description" content="Case study: rebuilding the entry area of a product detail page for a large consumer electronics retailer – hypothesis, design decisions, A/B test results and learnings.">
+<meta name="theme-color" content="#0d0d0d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo" viewBox="0 0 170 38">
+    <path fill="currentColor" d="M59.192 28C58.0186 28 57.0373 27.6373 56.248 26.912C55.48 26.1867 54.9893 25.248 54.776 24.096H54.2V31.456C54.2 32.3307 53.9546 33.0667 53.464 33.664C52.9733 34.2827 52.2266 34.592 51.224 34.592C50.264 34.592 49.5173 34.2827 48.984 33.664C48.472 33.0667 48.216 32.3093 48.216 31.392V19.424C48.216 18.3573 48.1733 17.4613 48.088 16.736C48.024 15.9893 47.96 15.3173 47.896 14.72C47.8106 13.824 47.992 13.0667 48.44 12.448C48.888 11.808 49.6133 11.424 50.616 11.296C51.9173 11.1253 52.8346 11.36 53.368 12C53.9226 12.6187 54.2 13.5893 54.2 14.912V16.448L54.328 16.48C54.4346 15.648 54.68 14.8373 55.064 14.048C55.4693 13.2373 56.0346 12.576 56.76 12.064C57.4853 11.5307 58.4026 11.264 59.512 11.264C61.368 11.264 62.744 12.0107 63.64 13.504C64.5573 14.976 65.016 16.9493 65.016 19.424C65.016 25.1413 63.0746 28 59.192 28ZM54.072 19.36C54.072 19.7013 54.1146 19.968 54.2 20.16C54.328 20.5653 54.5946 20.864 55 21.056C55.4266 21.2267 56.056 21.312 56.888 21.312C57.9546 21.312 58.68 21.152 59.064 20.832C59.4693 20.512 59.672 20.0213 59.672 19.36C59.672 18.6773 59.48 18.1867 59.096 17.888C58.712 17.568 57.9866 17.408 56.92 17.408C56.0666 17.408 55.4266 17.504 55 17.696C54.5946 17.8667 54.328 18.1547 54.2 18.56C54.1146 18.752 54.072 19.0187 54.072 19.36Z"/>
+    <path fill="currentColor" d="M74.3655 28.064C71.8695 28.064 69.8748 27.328 68.3815 25.856C66.9095 24.3627 66.1735 22.2613 66.1735 19.552C66.1735 17.888 66.5148 16.4267 67.1975 15.168C67.8801 13.9093 68.8295 12.928 70.0455 12.224C71.2828 11.4987 72.7228 11.136 74.3655 11.136C76.2001 11.136 77.7255 11.4987 78.9415 12.224C80.1575 12.928 81.0641 13.9093 81.6615 15.168C82.2801 16.4267 82.5895 17.888 82.5895 19.552C82.5895 22.2613 81.9068 24.3627 80.5415 25.856C79.1975 27.328 77.1388 28.064 74.3655 28.064ZM69.9815 19.008C69.9815 19.6693 70.3121 20.1387 70.9735 20.416C71.6348 20.672 72.7655 20.8 74.3655 20.8C75.9655 20.8 77.0961 20.672 77.7575 20.416C78.4188 20.1387 78.7495 19.6693 78.7495 19.008C78.7495 18.368 78.4188 17.92 77.7575 17.664C77.0961 17.408 75.9655 17.28 74.3655 17.28C72.7655 17.28 71.6348 17.408 70.9735 17.664C70.3121 17.92 69.9815 18.368 69.9815 19.008Z"/>
+    <path fill="currentColor" d="M87.1532 28C86.1932 28 85.4252 27.7227 84.8492 27.168C84.2945 26.592 84.0172 25.888 84.0172 25.056V14.464C84.0172 13.568 84.2839 12.8107 84.8172 12.192C85.3719 11.5733 86.1505 11.264 87.1532 11.264C88.1345 11.264 88.8706 11.5733 89.3612 12.192C89.8519 12.8107 90.0972 13.5893 90.0972 14.528V16.128H90.6732C90.6732 14.3147 91.0572 13.056 91.8252 12.352C92.5932 11.6267 93.5426 11.264 94.6732 11.264C96.1239 11.264 97.1905 11.712 97.8732 12.608C98.5559 13.504 98.8972 14.6773 98.8972 16.128H99.4732C99.4732 14.912 99.6759 13.952 100.081 13.248C100.487 12.544 100.999 12.0427 101.617 11.744C102.257 11.424 102.919 11.264 103.601 11.264C104.988 11.264 106.001 11.5947 106.641 12.256C107.303 12.9173 107.729 13.8027 107.921 14.912C108.113 16.0213 108.209 17.2693 108.209 18.656V25.056C108.209 25.888 107.921 26.592 107.345 27.168C106.791 27.7227 106.044 28 105.105 28C104.167 28 103.409 27.7227 102.833 27.168C102.257 26.592 101.969 25.888 101.969 25.056V19.392C101.969 18.624 101.873 18.0267 101.681 17.6C101.489 17.1733 101.105 16.96 100.529 16.96C99.9106 16.96 99.5052 17.1947 99.3132 17.664C99.1426 18.1333 99.0572 18.7307 99.0572 19.456V25.056C99.0572 25.888 98.7906 26.592 98.2572 27.168C97.7239 27.7227 96.9879 28 96.0492 28C95.0892 28 94.3212 27.7227 93.7452 27.168C93.1906 26.592 92.9132 25.888 92.9132 25.056V19.392C92.9132 18.624 92.8172 18.0267 92.6252 17.6C92.4332 17.1733 92.0599 16.96 91.5052 16.96C90.8866 16.96 90.4919 17.1947 90.3212 17.664C90.1719 18.1333 90.0972 18.7307 90.0972 19.456V25.056C90.0972 25.888 89.8412 26.592 89.3292 27.168C88.8172 27.7227 88.0919 28 87.1532 28Z"/>
+    <path fill="currentColor" d="M121.192 28C120.019 28 119.037 27.6373 118.248 26.912C117.48 26.1867 116.989 25.248 116.776 24.096H116.2V31.456C116.2 32.3307 115.955 33.0667 115.464 33.664C114.973 34.2827 114.227 34.592 113.224 34.592C112.264 34.592 111.517 34.2827 110.984 33.664C110.472 33.0667 110.216 32.3093 110.216 31.392V19.424C110.216 18.3573 110.173 17.4613 110.088 16.736C110.024 15.9893 109.96 15.3173 109.896 14.72C109.811 13.824 109.992 13.0667 110.44 12.448C110.888 11.808 111.613 11.424 112.616 11.296C113.917 11.1253 114.835 11.36 115.368 12C115.923 12.6187 116.2 13.5893 116.2 14.912V16.448L116.328 16.48C116.435 15.648 116.68 14.8373 117.064 14.048C117.469 13.2373 118.035 12.576 118.76 12.064C119.485 11.5307 120.403 11.264 121.512 11.264C123.368 11.264 124.744 12.0107 125.64 13.504C126.557 14.976 127.016 16.9493 127.016 19.424C127.016 25.1413 125.075 28 121.192 28ZM116.072 19.36C116.072 19.7013 116.115 19.968 116.2 20.16C116.328 20.5653 116.595 20.864 117 21.056C117.427 21.2267 118.056 21.312 118.888 21.312C119.955 21.312 120.68 21.152 121.064 20.832C121.469 20.512 121.672 20.0213 121.672 19.36C121.672 18.6773 121.48 18.1867 121.096 17.888C120.712 17.568 119.987 17.408 118.92 17.408C118.067 17.408 117.427 17.504 117 17.696C116.595 17.8667 116.328 18.1547 116.2 18.56C116.115 18.752 116.072 19.0187 116.072 19.36Z"/>
+    <path fill="currentColor" d="M131.622 28C130.577 28 129.787 27.7227 129.254 27.168C128.742 26.6133 128.486 25.92 128.486 25.088V6.528C128.486 5.61067 128.742 4.85334 129.254 4.256C129.787 3.63734 130.577 3.328 131.622 3.328C132.561 3.328 133.286 3.63734 133.798 4.256C134.31 4.85334 134.566 5.58934 134.566 6.464V25.088C134.566 25.92 134.31 26.6133 133.798 27.168C133.286 27.7227 132.561 28 131.622 28Z"/>
+    <path fill="currentColor" d="M141.296 28C139.803 28 138.587 27.4347 137.648 26.304C136.71 25.1733 136.23 23.584 136.208 21.536L136.176 14.144C136.176 13.2267 136.454 12.512 137.008 12C137.584 11.4667 138.363 11.2 139.344 11.2C140.283 11.2 141.04 11.4667 141.616 12C142.192 12.512 142.48 13.2267 142.48 14.144V20.832C142.48 22.432 143.11 23.232 144.368 23.232C144.987 23.232 145.403 23.008 145.616 22.56C145.83 22.0907 145.936 21.4933 145.936 20.768V14.144C145.936 13.312 146.224 12.6187 146.8 12.064C147.376 11.488 148.123 11.2 149.04 11.2C150 11.2 150.736 11.488 151.248 12.064C151.782 12.6187 152.048 13.312 152.048 14.144V24.64C152.048 25.664 151.814 26.4853 151.344 27.104C150.896 27.7013 150.16 28 149.136 28C148.134 28 147.344 27.7013 146.768 27.104C146.214 26.4853 145.936 25.664 145.936 24.64V24.096H145.36C145.36 25.3333 144.987 26.2933 144.24 26.976C143.515 27.6587 142.534 28 141.296 28Z"/>
+    <path fill="currentColor" d="M156.812 28C155.873 28 155.116 27.7227 154.54 27.168C153.985 26.592 153.708 25.888 153.708 25.056V14.464C153.708 13.568 153.974 12.8107 154.508 12.192C155.041 11.5733 155.809 11.264 156.812 11.264C157.793 11.264 158.54 11.5733 159.052 12.192C159.564 12.8107 159.82 13.5893 159.82 14.528V16.128H160.396C160.396 14.912 160.609 13.952 161.036 13.248C161.484 12.544 162.049 12.0427 162.732 11.744C163.414 11.424 164.097 11.264 164.78 11.264C166.422 11.264 167.628 11.8613 168.396 13.056C169.164 14.2293 169.548 15.904 169.548 18.08V25.056C169.548 25.888 169.27 26.592 168.716 27.168C168.161 27.7227 167.414 28 166.476 28C165.516 28 164.748 27.7227 164.172 27.168C163.617 26.592 163.34 25.888 163.34 25.056V19.392C163.34 18.624 163.19 18.0267 162.892 17.6C162.614 17.1733 162.198 16.96 161.644 16.96C161.004 16.96 160.534 17.1947 160.236 17.664C159.958 18.1333 159.82 18.7307 159.82 19.456V25.056C159.82 25.888 159.553 26.592 159.02 27.168C158.486 27.7227 157.75 28 156.812 28Z"/>
+    <path fill="currentColor" d="M17.9649 38C12.4912 38 8.11696 36.3478 4.8421 33.0435C1.61403 29.6912 0 24.9742 0 18.8923C0 15.1569 0.748538 11.8765 2.24561 9.05104C3.74269 6.22558 5.82456 4.02268 8.49123 2.44234C11.2047 0.814114 14.3626 0 17.9649 0C21.9883 0 25.3333 0.814114 28 2.44234C30.6667 4.02268 32.655 6.22558 33.9649 9.05104C35.3216 11.8765 36 15.1569 36 18.8923C36 24.9742 34.5029 29.6912 31.5088 33.0435C28.5614 36.3478 24.0468 38 17.9649 38ZM8.35088 17.6711C8.35088 19.1556 9.07602 20.2092 10.5263 20.8318C11.9766 21.4064 14.4561 21.6938 17.9649 21.6938C21.4737 21.6938 23.9532 21.4064 25.4035 20.8318C26.8538 20.2092 27.5789 19.1556 27.5789 17.6711C27.5789 16.2344 26.8538 15.2287 25.4035 14.6541C23.9532 14.0794 21.4737 13.7921 17.9649 13.7921C14.4561 13.7921 11.9766 14.0794 10.5263 14.6541C9.07602 15.2287 8.35088 16.2344 8.35088 17.6711Z"/>
+    <path fill="currentColor" d="M14.9704 17.6531C14.9704 18.8929 13.9886 19.8979 12.7774 19.8979C11.5663 19.8979 10.5844 18.8929 10.5844 17.6531C10.5844 16.4133 11.5663 15.4083 12.7774 15.4083C13.9886 15.4083 14.9704 16.4133 14.9704 17.6531Z"/>
+    <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20.129 18.7605C20.3164 19.055 20.6391 19.0816 20.8499 18.8197C21.3836 18.1568 22.0574 17.586 22.7784 17.4554C23.4682 17.3305 24.2718 17.5941 25.1283 18.791C25.3277 19.0697 25.651 19.0697 25.8504 18.791C26.0499 18.5123 26.0499 18.0605 25.8504 17.7818C24.792 16.3028 23.6808 15.8529 22.6471 16.0401C21.6448 16.2217 20.7866 16.9889 20.1714 17.7531C19.9606 18.0149 19.9416 18.4659 20.129 18.7605Z"/>
+  </symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="index.html#work" class="back">← All work</a>
+    <a href="index.html" class="logo" aria-label="Philipp Pomplun – home"><svg viewBox="0 0 170 38"><use href="#logo"/></svg></a>
+    <nav class="links" aria-label="Main">
+      <a class="btn nav-btn dl" href="resume.pdf" download aria-label="Download résumé (PDF)" title="Résumé (PDF)"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M12 11v6"/><path d="m9 14 3 3 3-3"/></svg><span class="txt">Résumé (PDF)</span></a>
+      <a class="btn light nav-btn mail" href="index.html#contact" aria-label="Get in touch" title="Get in touch"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span class="txt">Get in touch</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+
+    <header class="cs-head">
+      <span class="eyebrow reveal">Case study · Consumer electronics retail · [Year]</span>
+      <h1 class="display reveal" style="--d:.1s">Product page redesign</h1>
+      <p class="reveal" style="--d:.2s">A large electronics retailer’s product page had grown feature by feature until price, options and services competed for the same narrow column. I rebuilt its entry area around one question: what does a buyer need to see before deciding?</p>
+    </header>
+
+    <dl class="facts reveal">
+      <div><dt>My role</dt><dd>[e.g. Lead designer – analysis, concept, UI, test setup]</dd></div>
+      <div><dt>Team</dt><dd>[e.g. UX researcher, developer, client e-commerce team]</dd></div>
+      <div><dt>Timeline</dt><dd>[e.g. X weeks incl. test runtime]</dd></div>
+      <div><dt>Methods</dt><dd>Heuristic review, hypothesis, A/B test with full-funnel tracking</dd></div>
+    </dl>
+
+    <div class="compare">
+      <figure class="shot reveal">
+        <div class="frame"><img src="img/cs1/ctrl.png" width="2880" height="2200" alt="Original product page (recreated, anonymised): narrow content column next to a category sidebar, small gallery, options, price and protection plans stacked tightly above the add-to-cart button." loading="lazy"></div>
+        <figcaption><span class="label">CONTROL</span>Original entry area</figcaption>
+      </figure>
+      <figure class="shot reveal" style="--d:.12s">
+        <div class="frame"><img src="img/cs1/var.png" width="2880" height="2840" alt="Redesigned product page (recreated, anonymised): full-width two-column layout with a large gallery on the left and a structured buy box on the right – title block, configuration panel, reference price, delivery info, primary and secondary CTA, protection plans as cards." loading="lazy"></div>
+        <figcaption><span class="label var">VARIANT</span>Redesigned entry area</figcaption>
+      </figure>
+    </div>
+    <p class="note reveal" style="margin-top:14px">Screens recreated and anonymised – retailer branding, service names and brand colours replaced with a fictional shop.</p>
+
+    <div class="tldr">
+      <div class="metric reveal"><span class="num neutral">+0.58%</span><p>relative change in sales – primary goal</p></div>
+      <div class="metric reveal" style="--d:.1s"><span class="num">67%</span><p>statistical significance – below the 95% threshold, so not a reliable win</p></div>
+      <div class="metric reveal" style="--d:.2s"><span class="num">0 of 7</span><p>funnel steps with a significant change – the redesign neither helped nor hurt measurably</p></div>
+    </div>
+
+    <div class="cs-body">
+      <nav class="toc" aria-label="On this page">
+        <span class="t">ON THIS PAGE</span>
+        <a href="#problem">01 Problem</a>
+        <a href="#hypothesis">02 Hypothesis</a>
+        <a href="#design">03 Design decisions</a>
+        <a href="#results">04 Results</a>
+        <a href="#learnings">05 Learnings</a>
+      </nav>
+
+      <div class="cs-content">
+
+        <section id="problem" class="reveal">
+          <span class="eyebrow">01</span>
+          <h2 class="display">Everything on the page, nothing in focus</h2>
+          <p>The original product page squeezed the most important buying information into a narrow column between a category sidebar and an ad banner. Above the fold, users had to parse:</p>
+          <ul class="list">
+            <li><span>A small gallery and a product title that wrapped awkwardly next to the brand logo.</span></li>
+            <li><span>Colour, storage and region options in a heavily outlined box that drew more attention than the price.</span></li>
+            <li><span>A price without any reference point – no indication whether it was a good deal.</span></li>
+            <li><span>Protection plans as a dense radio list with long, truncated descriptions, placed right between price and add-to-cart.</span></li>
+            <li><span>Stock and delivery information only <strong>after</strong> the main call to action.</span></li>
+          </ul>
+        </section>
+
+        <section id="hypothesis" class="reveal">
+          <span class="eyebrow">02</span>
+          <h2 class="display">Hypothesis</h2>
+          <div class="hypo">
+            <p><b>If</b> we adjust the visual hierarchy of the product page,</p>
+            <p><b>then</b> the sales rate will increase,</p>
+            <p><b>because</b> the information relevant to users becomes easier to access (cognitive ease).</p>
+          </div>
+          <p>Primary goal: <strong>sales</strong>. To understand side effects, every step of the funnel was tracked – from add-to-cart on the product page through cart, login, address, payment and shipping to order confirmation.</p>
+        </section>
+
+        <section id="design" class="reveal">
+          <span class="eyebrow">03</span>
+          <h2 class="display">Design decisions</h2>
+          <p>Instead of tweaking single elements, the variant restructured the whole entry area into a clear reading order: <strong>see it → understand it → configure it → trust the price → buy it.</strong></p>
+          <div class="changes">
+            <div class="change"><h3>Full-width two-column layout</h3><p>Removed the sidebar so gallery and buy box get the space they need.</p></div>
+            <div class="change"><h3>Bigger, browsable gallery</h3><p>Larger product image with arrows and more thumbnails visible at once.</p></div>
+            <div class="change"><h3>One clear title block</h3><p>Brand, name, key specs, rating and article number stacked in a single scannable unit.</p></div>
+            <div class="change"><h3>Calmer configuration</h3><p>Options moved into a soft grey panel instead of a loud outlined box.</p></div>
+            <div class="change"><h3>Price with context</h3><p>Reference price and discount badge make the deal visible at a glance.</p></div>
+            <div class="change"><h3>Reassurance before the CTA</h3><p>Stock, store availability and express delivery now sit above add-to-cart.</p></div>
+            <div class="change"><h3>Clear CTA hierarchy</h3><p>Add-to-cart as primary action, rental offer as secondary option below it.</p></div>
+            <div class="change"><h3>Protection plans as cards</h3><p>Moved below the CTAs, each with a clear title, coverage and price.</p></div>
+          </div>
+          <p class="placeholder">[Optional: 1–2 directions you explored and discarded, and why – e.g. sticky buy box, tabs for services. This is where you show your reasoning.]</p>
+        </section>
+
+        <section id="results" class="reveal">
+          <span class="eyebrow">04</span>
+          <h2 class="display">Results: a flat line</h2>
+          <p>The variant ran against the original as an A/B test, with sales as the primary goal and every funnel step tracked from add-to-cart to order confirmation.</p>
+          <p>Sales moved slightly up, most intermediate funnel steps slightly down – but <strong>none of the changes reached statistical significance.</strong> The redesign neither helped nor hurt measurably. Which raised the more interesting question: why not?</p>
+        </section>
+
+        <section id="learnings" class="reveal">
+          <span class="eyebrow">05</span>
+          <h2 class="display">What I took away</h2>
+          <div class="callout">
+            <h3>Big-bang redesigns hide their own effects</h3>
+            <p>Eight changes shipped at once. Some likely helped, some likely hurt – and in the total they cancelled each other out. A flat result doesn’t mean “nothing works”, it means the test couldn’t tell which part did what.</p>
+          </div>
+          <div class="callout">
+            <h3>Two changes may have pulled the other way</h3>
+            <p><strong>The rental CTA</strong> is a strong blue button directly below add-to-cart – and it links to an external site. It competes for the same click and can take buyers out of the funnel.<br><strong>The protection plans</strong> moved from a “no protection” default to visually highlighted cards. If users read the first plan as selected, the perceived price at add-to-cart rises by ~40 €.</p>
+          </div>
+          <div class="callout">
+            <h3>Next: break it into testable pieces</h3>
+            <p>Layout and hierarchy alone · reference price · protection plan default · placement of the rental offer. Each as its own test, so wins can be kept and losers dropped.</p>
+          </div>
+          <p class="placeholder">[What happened next – was the variant rolled out as the new base, or were follow-up tests run? Add their results here if you have them.]</p>
+        </section>
+
+      </div>
+    </div>
+
+    <a class="next reveal" href="checkout.html">
+      <div><small>Next case study</small><div class="display">Checkout entry restructuring →</div></div>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="index.html" aria-label="Home"><svg viewBox="0 0 170 38"><use href="#logo"/></svg></a>
+    <small>© <span id="year">2026</span> Philipp Pomplun · <a href="#">Imprint</a> · <a href="#">Privacy</a></small>
+  </div>
+</footer>
+
+<div class="edge-blur" aria-hidden="true"><div></div><div></div><div></div><div></div></div>
+<script src="main.js" defer></script>
+</body>
+</html>

@@ -19,11 +19,16 @@
   /* ---------- Nav ---------- */
   .nav{position:sticky;top:0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
   .nav.scrolled{background:rgba(13,13,13,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
-  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:84px}
+  .nav .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;column-gap:24px;height:84px}
+  .nav .wrap>*{grid-row:1}
+  .nav .logo{grid-column:2}
+  .nav .back,.nav .sections{grid-column:1;justify-self:start}
+  .nav .links{grid-column:3;justify-self:end}
+  .sections{display:flex;align-items:center;gap:36px}
   .logo svg{height:30px;width:auto;display:block;color:#fff}
   .links{display:flex;align-items:center;gap:36px}
-  .links a.text{color:var(--muted);font-weight:500;font-size:16px;transition:color .2s}
-  .links a.text:hover{color:var(--text)}
+  .nav a.text{color:var(--muted);font-weight:500;font-size:16px;transition:color .2s}
+  .nav a.text:hover{color:var(--text)}
   .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:500;font-size:16px;border:1px solid var(--line);transition:transform .25s var(--ease),background .25s,border-color .25s;white-space:nowrap}
   .btn:hover{transform:translateY(-2px);border-color:#444}
   .btn.primary{background:var(--pink);color:var(--dark);border-color:var(--pink)}
@@ -170,13 +175,15 @@
     .process{grid-template-columns:1fr 1fr}
     .job{grid-template-columns:1fr;gap:32px}
   }
-  @media (max-width:860px){
-    .links a.text{display:none}
+  @media (max-width:1080px){
     .links{gap:10px}
     .nav-btn .txt{display:none}
     .links .nav-btn + .nav-btn{margin-left:0}
     .nav-btn{width:44px;height:44px;padding:0;justify-content:center}
     .nav-btn .ico{width:20px;height:20px}
+  }
+  @media (max-width:860px){
+    .sections{display:none}
     .grid,.strengths{grid-template-columns:1fr}
     .stats{grid-template-columns:1fr 1fr;gap:28px 16px}
     section{padding-top:100px}
@@ -184,7 +191,7 @@
   }
   @media (max-width:520px){
     .process{grid-template-columns:1fr}
-    .nav .wrap{height:68px}
+    .nav .wrap{height:68px;column-gap:12px}
     .logo svg{height:26px}
     .edge-blur{height:80px}
   }

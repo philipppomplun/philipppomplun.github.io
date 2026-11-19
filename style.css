@@ -205,6 +205,7 @@
   .metric{background:var(--surface);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:8px}
   .metric .num{font-family:"Space Grotesk",sans-serif;font-weight:500;font-size:clamp(36px,3.6vw,48px);letter-spacing:-.02em;line-height:1.1}
   .metric .num.neutral{color:#f2c94c}
+  .metric .num.up,.cs-content strong.up{color:var(--green)} /* uplifts in green, like on the homepage */
   .metric p{color:var(--muted);font-size:15px}
   .cs-body{display:grid;grid-template-columns:240px minmax(0,800px);gap:80px;padding-top:48px}
   .toc{position:sticky;top:110px;align-self:start;display:flex;flex-direction:column;gap:14px;font-size:15px}

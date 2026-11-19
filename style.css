@@ -44,7 +44,7 @@
   .dot::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--green);animation:ping 2s var(--ease) infinite}
   @keyframes ping{0%{transform:scale(1);opacity:.7}80%,100%{transform:scale(2.6);opacity:0}}
   .identity{display:flex;align-items:center;gap:16px}
-  .avatar{width:56px;height:56px;border-radius:50%;background:#5a4d47 center/cover;flex:none}
+  .avatar{width:56px;height:56px;border-radius:50%;background:#5a4d47 url(img/avatar.jpg) center/cover;flex:none}
   .identity strong{display:block;font-weight:500;font-size:18px}
   .identity span{color:var(--muted);font-size:16px}
   h1.display{font-size:clamp(40px,5.2vw,76px);max-width:21ch;text-wrap:balance}

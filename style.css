@@ -84,6 +84,8 @@
   .card p{color:var(--muted);font-size:17px}
   .outcome{display:flex;align-items:center;gap:10px;color:var(--green);font-size:15px;font-weight:500}
   .outcome::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);flex:none}
+  .outcome.neutral{color:var(--muted)}
+  .outcome.neutral::before{background:var(--muted)}
 
   /* Statement */
   .statement{font-size:clamp(30px,3.7vw,54px);max-width:23ch}
@@ -197,10 +199,13 @@
   .compare{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px;align-items:start}
   .shot{display:flex;flex-direction:column;gap:12px}
   .shot .frame{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+  .compare.mobile{grid-template-columns:repeat(4,1fr);gap:16px}
+  .compare.mobile .shot figcaption{flex-wrap:wrap}
   .shot .frame img{width:100%;height:auto}
   .shot figcaption{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--muted)}
   .label{font-family:"Space Grotesk",sans-serif;font-weight:500;font-size:12px;letter-spacing:.06em;padding:4px 8px;border-radius:6px;background:var(--surface);border:1px solid var(--line);color:#fff}
   .label.var{background:var(--pink);color:var(--dark);border-color:var(--pink)}
+  .label.alt{background:transparent;color:var(--muted)}
   .tldr{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:48px 0}
   .metric{background:var(--surface);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:8px}
   .metric .num{font-family:"Space Grotesk",sans-serif;font-weight:500;font-size:clamp(36px,3.6vw,48px);letter-spacing:-.02em;line-height:1.1}
@@ -246,6 +251,7 @@
   .back{color:var(--muted);font-weight:500;font-size:16px;transition:color .2s}.back:hover{color:#fff}
   @media (max-width:1000px){
     .compare{grid-template-columns:1fr}
+    .compare.mobile{grid-template-columns:1fr 1fr}
     .cs-body{grid-template-columns:1fr;gap:40px}
     .toc{display:none}
     .facts{grid-template-columns:1fr 1fr}

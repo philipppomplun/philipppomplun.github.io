@@ -265,3 +265,6 @@
     .tldr{grid-template-columns:1fr}
     .changes{grid-template-columns:1fr}
   }
+
+  .arr{display:inline-block;width:.9em;height:.9em;vertical-align:-.08em;flex:none}
+  .arr.l{transform:scaleX(-1)}

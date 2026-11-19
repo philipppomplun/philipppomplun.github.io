@@ -69,3 +69,16 @@
   }), {rootMargin:'-30% 0px -60% 0px'});
   map.forEach((_, id) => { const s = document.getElementById(id); if (s) obs.observe(s); });
 })();
+
+// Hide bottom edge blur when the page end is reached, so the footer stays readable
+(() => {
+  const blur = document.querySelector('.edge-blur');
+  if (!blur) return;
+  const update = () => {
+    const atEnd = innerHeight + scrollY >= document.documentElement.scrollHeight - 80;
+    blur.classList.toggle('off', atEnd);
+  };
+  addEventListener('scroll', update, {passive:true});
+  addEventListener('resize', update);
+  update();
+})();

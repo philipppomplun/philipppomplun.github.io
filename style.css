@@ -139,7 +139,8 @@
   footer small a:hover{color:var(--text)}
 
   /* ---------- Bottom blur (progressive) ---------- */
-  .edge-blur{position:fixed;left:0;right:0;bottom:0;height:120px;pointer-events:none;z-index:40}
+  .edge-blur{position:fixed;left:0;right:0;bottom:0;height:120px;pointer-events:none;z-index:40;transition:opacity .4s var(--ease)}
+  .edge-blur.off{opacity:0} /* hidden once the footer is reached */
   .edge-blur div{position:absolute;inset:0}
   .edge-blur div:nth-child(1){backdrop-filter:blur(1px);-webkit-backdrop-filter:blur(1px);mask:linear-gradient(to bottom,transparent 0%,#000 25%,#000 50%,transparent 75%);-webkit-mask:linear-gradient(to bottom,transparent 0%,#000 25%,#000 50%,transparent 75%)}
   .edge-blur div:nth-child(2){backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);mask:linear-gradient(to bottom,transparent 25%,#000 50%,#000 75%,transparent 100%);-webkit-mask:linear-gradient(to bottom,transparent 25%,#000 50%,#000 75%,transparent 100%)}

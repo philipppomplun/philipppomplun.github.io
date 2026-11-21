@@ -112,7 +112,11 @@
   .strength:hover{border-color:#444}
   .strength h3{font-size:28px}
   .strength p{color:var(--muted)}
-  .strength .proof{color:var(--green);font-size:15px;font-weight:500}
+  .strength .proof{color:var(--green);font-size:15px;font-weight:500;display:inline-flex;align-items:center;gap:8px;align-self:flex-start}
+  .strength .proof .arr{transition:transform .3s var(--ease)}
+  .strength .proof span{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .3s var(--ease)}
+  .strength .proof:hover .arr{transform:translateX(3px)}
+  .strength .proof:hover span{background-size:100% 1px}
 
   /* Experience */
   .job{display:grid;grid-template-columns:400px 1fr;gap:64px;border-top:1px solid var(--line);padding:40px 0}
